@@ -6,7 +6,7 @@ import com.shaparapatah.dictionaryapp.model.datasource.DataSourceRemote
 import com.shaparapatah.dictionaryapp.model.repository.RepositoryImplementation
 import com.shaparapatah.dictionaryapp.presenter.Presenter
 import com.shaparapatah.dictionaryapp.view.base.View
-import geekbrains.ru.translator.rx.SchedulerProvider
+import com.shaparapatah.dictionaryapp.rx.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableObserver
 

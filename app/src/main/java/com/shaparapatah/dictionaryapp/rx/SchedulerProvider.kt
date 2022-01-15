@@ -1,5 +1,6 @@
-package geekbrains.ru.translator.rx
+package com.shaparapatah.dictionaryapp.rx
 
+import com.shaparapatah.dictionaryapp.rx.ISchedulerProvider
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

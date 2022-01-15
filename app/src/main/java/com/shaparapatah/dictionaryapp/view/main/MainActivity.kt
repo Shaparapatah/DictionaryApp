@@ -13,7 +13,6 @@ import com.shaparapatah.dictionaryapp.presenter.Presenter
 import com.shaparapatah.dictionaryapp.view.base.BaseActivity
 import com.shaparapatah.dictionaryapp.view.base.View
 import com.shaparapatah.dictionaryapp.view.main.adapter.MainAdapter
-import geekbrains.ru.translator.view.main.SearchDialogFragment
 
 class MainActivity : BaseActivity<AppState>() {
 

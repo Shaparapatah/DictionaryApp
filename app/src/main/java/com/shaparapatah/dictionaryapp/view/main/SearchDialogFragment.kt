@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.view.main
+package com.shaparapatah.dictionaryapp.view.main
 
 import android.os.Bundle
 import android.text.Editable
