@@ -1,7 +1,7 @@
 package com.shaparapatah.dictionaryapp.presenter
 
 import com.shaparapatah.dictionaryapp.model.data.AppState
-import com.shaparapatah.dictionaryapp.view.View
+import com.shaparapatah.dictionaryapp.view.base.View
 
 interface Presenter<T : AppState, V : View> {
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DictionaryApp</string>
+    <string name="app_name">Dictionary</string>
     <string name="error_textview_stub">Error</string>
     <string name="reload_button">Reload</string>
     <string name="undefined_error">Undefined error</string>
@@ -7,6 +7,4 @@
     <string name="button_search">Search</string>
     <string name="search_hint">New word</string>
     <string name="delete_description">X</string>
-
-
 </resources>

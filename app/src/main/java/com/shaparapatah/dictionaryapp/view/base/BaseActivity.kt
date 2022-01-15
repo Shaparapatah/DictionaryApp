@@ -1,10 +1,9 @@
-package com.shaparapatah.dictionaryapp.main
+package com.shaparapatah.dictionaryapp.view.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.shaparapatah.dictionaryapp.model.data.AppState
 import com.shaparapatah.dictionaryapp.presenter.Presenter
-import com.shaparapatah.dictionaryapp.view.View
 
 abstract class BaseActivity<T : AppState> : AppCompatActivity(), View {
 

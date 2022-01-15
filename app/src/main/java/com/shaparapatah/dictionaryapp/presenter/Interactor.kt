@@ -1,8 +1,8 @@
 package com.shaparapatah.dictionaryapp.presenter
 
-import java.util.*
+import io.reactivex.Observable
 
-interface Ineractor<T> {
+interface Interactor<T> {
 
     fun getData(word: String, fromRemoteSource : Boolean) : Observable<T>
 }

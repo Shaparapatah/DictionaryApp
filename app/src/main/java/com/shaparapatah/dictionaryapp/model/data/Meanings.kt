@@ -1,4 +1,4 @@
-package com.shaparapatah.dictionaryapp.model
+package com.shaparapatah.dictionaryapp.model.data
 
 import com.google.gson.annotations.SerializedName
 
