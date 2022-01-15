@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.rx
+package com.shaparapatah.dictionaryapp.rx
 
 import io.reactivex.Scheduler
 
