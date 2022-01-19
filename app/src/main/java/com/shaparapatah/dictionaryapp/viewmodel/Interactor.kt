@@ -1,4 +1,4 @@
-package com.shaparapatah.dictionaryapp.presenter
+package com.shaparapatah.dictionaryapp.viewmodel
 
 import io.reactivex.Observable
 

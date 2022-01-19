@@ -1,6 +1,5 @@
-package com.shaparapatah.dictionaryapp
+package com.shaparapatah.dictionaryapp.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.shaparapatah.dictionaryapp.model.data.AppState
@@ -21,7 +20,7 @@ abstract class BaseViewModel<T : AppState>(
     protected val schedulerProvider: SchedulerProvider = SchedulerProvider()
 ) : ViewModel() {
 
-    open fun getData(word: String, isOnline: Boolean): LiveData<T> = liveDataForViewToObserve
+    abstract fun getData(word: String, isOnline: Boolean)
 
     override fun onCleared() {
         compositeDisposable.clear()
