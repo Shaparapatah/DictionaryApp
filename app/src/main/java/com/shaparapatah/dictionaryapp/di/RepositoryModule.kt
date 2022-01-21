@@ -1,7 +1,5 @@
 package com.shaparapatah.dictionaryapp.di
 
-import com.shaparapatah.dictionaryapp.di.NAME_LOCAL
-import com.shaparapatah.dictionaryapp.di.NAME_REMOTE
 import com.shaparapatah.dictionaryapp.model.data.DataModel
 import com.shaparapatah.dictionaryapp.model.datasource.DataSource
 import com.shaparapatah.dictionaryapp.model.datasource.RetrofitImplementation

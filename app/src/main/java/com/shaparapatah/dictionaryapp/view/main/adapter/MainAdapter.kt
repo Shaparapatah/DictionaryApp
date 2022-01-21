@@ -3,7 +3,6 @@ package com.shaparapatah.dictionaryapp.view.main.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.shaparapatah.dictionaryapp.R
 import com.shaparapatah.dictionaryapp.model.data.DataModel

@@ -10,6 +10,10 @@ import io.reactivex.Observable
 import javax.inject.Inject
 import javax.inject.Named
 
+/** Извлекаем данные из БД и Интернета и отправляем в Presenter
+ * Интерактор скрывает работу с хранилищем или веб-сервисом.
+ * Работает через интерфейс */
+
 class MainInteractor @Inject constructor(
     @Named(NAME_REMOTE) val repositoryRemote: Repository<List<DataModel>>,
     @Named(NAME_LOCAL) val repositoryLocal: Repository<List<DataModel>>

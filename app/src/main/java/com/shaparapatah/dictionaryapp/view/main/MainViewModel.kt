@@ -3,7 +3,6 @@ package com.shaparapatah.dictionaryapp.view.main
 import androidx.lifecycle.LiveData
 import com.shaparapatah.dictionaryapp.model.data.AppState
 import com.shaparapatah.dictionaryapp.utils.parseSearchResults
-import com.shaparapatah.dictionaryapp.view.main.MainInteractor
 import com.shaparapatah.dictionaryapp.viewmodel.BaseViewModel
 import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableObserver
