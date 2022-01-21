@@ -4,7 +4,8 @@ import com.shaparapatah.dictionaryapp.model.data.DataModel
 import com.shaparapatah.dictionaryapp.model.datasource.DataSource
 import io.reactivex.Observable
 
-class RepositoryImplementation(
+class
+RepositoryImplementation(
     private val dataSource: DataSource<List<DataModel>>
 ) : Repository<List<DataModel>> {
 

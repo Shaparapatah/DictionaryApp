@@ -42,3 +42,4 @@ class BaseInterceptor private constructor() : Interceptor {
     }
 
 }
+
