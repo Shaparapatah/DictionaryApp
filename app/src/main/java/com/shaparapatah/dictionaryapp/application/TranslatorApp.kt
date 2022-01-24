@@ -1,26 +1,20 @@
 package com.shaparapatah.dictionaryapp.application
 
 import android.app.Application
-import com.shaparapatah.dictionaryapp.di.DaggerAppComponent
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasAndroidInjector
-import javax.inject.Inject
+import com.shaparapatah.dictionaryapp.application
+import com.shaparapatah.dictionaryapp.mainScreen
+import org.koin.core.context.startKoin
 
-class TranslatorApp : Application(), HasAndroidInjector {
+/** Инициализация Koin в приложении
+ * @param startKoin
+ * Важная деталь - Нужно убедиться, что TranslatorApp прописан в Manifests */
 
-    @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
-
-    override fun androidInjector(): AndroidInjector<Any> {
-        return dispatchingAndroidInjector
-    }
+class TranslatorApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        DaggerAppComponent.builder()
-            .application(this)
-            .build()
-            .inject(this)
+        startKoin {
+            modules(listOf(application, mainScreen))
+        }
     }
 }

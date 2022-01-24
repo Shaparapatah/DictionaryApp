@@ -6,7 +6,6 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.shaparapatah.dictionaryapp.R
 import com.shaparapatah.dictionaryapp.databinding.ActivityMainBinding
@@ -15,13 +14,10 @@ import com.shaparapatah.dictionaryapp.model.data.DataModel
 import com.shaparapatah.dictionaryapp.utils.NetworkUtils.isOnline
 import com.shaparapatah.dictionaryapp.view.base.BaseActivity
 import com.shaparapatah.dictionaryapp.view.main.adapter.MainAdapter
-import dagger.android.AndroidInjection
-import javax.inject.Inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<AppState, MainInteractor>() {
 
-    @Inject
-    internal lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var binding: ActivityMainBinding
     override lateinit var model: MainViewModel
@@ -51,18 +47,12 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
-
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initViewModel()
+        initViews()
 
-        model = viewModelFactory.create(MainViewModel::class.java)
-        model.subscribe().observe(this@MainActivity, Observer<AppState> { renderData(it) })
-
-        binding.searchFab.setOnClickListener(fabClickListener)
-        binding.mainActivityRecyclerview.layoutManager = LinearLayoutManager(applicationContext)
-        binding.mainActivityRecyclerview.adapter = adapter
     }
 
     override fun renderData(appState: AppState) {
@@ -96,6 +86,31 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
             }
         }
     }
+
+    /** Koin
+
+    Выносим инициализацию элементов экрана в отдельный метод initViews */
+
+    private fun initViews() {
+        binding.searchFab.setOnClickListener(fabClickListener)
+        binding.mainActivityRecyclerview.layoutManager = LinearLayoutManager(applicationContext)
+        binding.mainActivityRecyclerview.adapter = adapter
+    }
+
+    private fun initViewModel() {
+        /** Убедимся, что модель инициализируется раньше View */
+        if (binding.mainActivityRecyclerview.adapter != null) {
+            throw IllegalStateException("ViewModel должна инициализироваться первой")
+        }
+        /** Теперь ViewModel инизиализируется через функцию by viewModel().
+        Эта функция, предоставляемая Koin из коробки через зависимости
+        import org.koin.androidx.viewmodel.ext.android.viewModel */
+
+        val viewModel: MainViewModel by viewModel()
+        model = viewModel
+        model.subscribe().observe(this@MainActivity, Observer<AppState> { renderData(it) })
+    }
+
 
     private fun showViewWorking() {
         binding.loadingFrameLayout.visibility = GONE

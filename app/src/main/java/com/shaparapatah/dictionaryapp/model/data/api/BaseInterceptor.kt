@@ -1,4 +1,4 @@
-package com.shaparapatah.dictionaryapp.model.datasource
+package com.shaparapatah.dictionaryapp.model.data.api
 
 import okhttp3.Interceptor
 import okhttp3.Response
