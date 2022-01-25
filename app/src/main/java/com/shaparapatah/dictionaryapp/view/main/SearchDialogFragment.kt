@@ -1,4 +1,4 @@
-package geekbrains.ru.translator.view.main
+package com.shaparapatah.dictionaryapp.view.main
 
 import android.os.Bundle
 import android.text.Editable
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.shaparapatah.dictionaryapp.databinding.SearchDialogFragmentBinding
+import com.shaparapatah.dictionaryapp.utils.getEmptyString
 
 class SearchDialogFragment : BottomSheetDialogFragment() {
 
@@ -67,7 +68,7 @@ class SearchDialogFragment : BottomSheetDialogFragment() {
 
     private fun addOnClearClickListener() {
         binding.clearTextImageview.setOnClickListener {
-            binding.searchEditText.setText("")
+            binding.searchEditText.setText(String.getEmptyString())
             binding.searchButtonTextview.isEnabled = false
         }
     }
