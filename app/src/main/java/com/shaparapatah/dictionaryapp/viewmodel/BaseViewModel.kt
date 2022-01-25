@@ -9,6 +9,15 @@ abstract class BaseViewModel<T : AppState>(
     protected open val _mutableLiveData: MutableLiveData<T> = MutableLiveData()
 ) : ViewModel() {
 
+    /**
+    Объявляем свой собственный скоуп
+    В качестве аргумента передается CoroutineContext, который мы составляем через "+" из трех частей:
+    - Dispatchers.Main говорит, что результат работы предназначен для основного потока;
+    - SupervisorJob() позволяет всем дочерним корутинам выполняться
+    независимо, то есть, если какая-то корутина упадёт с ошибкой, остальные будут выполнены нормально;
+    - CoroutineExceptionHandler позволяет перехватывать и отрабатывать ошибки и краши
+     */
+
     protected val viewModelCoroutineScope = CoroutineScope(
         Dispatchers.Main
                 + SupervisorJob()
@@ -21,6 +30,9 @@ abstract class BaseViewModel<T : AppState>(
         cancelJob()
     }
 
+    /**
+    Завершаем все незавершённые корутины, потому что пользователь закрыл экран
+     */
     protected fun cancelJob() {
 
         viewModelCoroutineScope.coroutineContext.cancelChildren()
