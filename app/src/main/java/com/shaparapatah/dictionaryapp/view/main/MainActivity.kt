@@ -12,7 +12,9 @@ import com.shaparapatah.dictionaryapp.databinding.ActivityMainBinding
 import com.shaparapatah.dictionaryapp.model.data.AppState
 import com.shaparapatah.dictionaryapp.model.data.DataModel
 import com.shaparapatah.dictionaryapp.utils.NetworkUtils.isOnline
+import com.shaparapatah.dictionaryapp.utils.convertMeaningsToString
 import com.shaparapatah.dictionaryapp.view.base.BaseActivity
+import com.shaparapatah.dictionaryapp.view.descriptionscreen.DescriptionActivity
 import com.shaparapatah.dictionaryapp.view.main.adapter.MainAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -31,7 +33,14 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
     private val onListItemClickListener: MainAdapter.OnListItemClickListener =
         object : MainAdapter.OnListItemClickListener {
             override fun onItemClick(data: DataModel) {
-                Toast.makeText(this@MainActivity, data.text, Toast.LENGTH_SHORT).show()
+                startActivity(
+                    DescriptionActivity.getIntent(
+                        this@MainActivity,
+                        data.text!!,
+                        convertMeaningsToString(data.meanings!!),
+                        data.meanings[0].imageUrl
+                    )
+                )
             }
         }
     private val onSearchClickListener: SearchDialogFragment.OnSearchClickListener =
