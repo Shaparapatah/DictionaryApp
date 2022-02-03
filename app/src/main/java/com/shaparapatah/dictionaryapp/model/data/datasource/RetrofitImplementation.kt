@@ -1,5 +1,4 @@
-package com.shaparapatah.dictionaryapp.model.datasource
-
+package com.shaparapatah.dictionaryapp.model.data.datasource
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.shaparapatah.dictionaryapp.model.data.DataModel

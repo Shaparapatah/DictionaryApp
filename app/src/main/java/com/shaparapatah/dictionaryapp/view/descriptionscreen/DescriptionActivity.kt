@@ -62,6 +62,7 @@ class DescriptionActivity : AppCompatActivity() {
         } else {
             //   usePicassoToLoadPhoto(binding.descriptionImageview, imageLink)
             useGlideToLoadPhoto(binding.descriptionImageview, imageLink)
+            
             //useCoilToLoadPhoto(binding.descriptionImageview, imageLink)
         }
     }
@@ -89,7 +90,9 @@ class DescriptionActivity : AppCompatActivity() {
 
     private fun usePicassoToLoadPhoto(imageView: ImageView, imageLink: String) {
         Picasso.get().load("https:$imageLink")
-            .placeholder(R.drawable.ic_no_photo_vector).fit().centerCrop()
+            .placeholder(R.drawable.ic_no_photo_vector)
+            .fit()
+            .centerCrop()
             .into(imageView, object : Callback {
                 override fun onSuccess() {
                     stopRefreshAnimationIfNeeded()
@@ -97,7 +100,6 @@ class DescriptionActivity : AppCompatActivity() {
 
                 override fun onError(e: Exception?) {
                     stopRefreshAnimationIfNeeded()
-                    imageView.setImageResource(R.drawable.ic_load_error_vector)
                 }
             })
     }

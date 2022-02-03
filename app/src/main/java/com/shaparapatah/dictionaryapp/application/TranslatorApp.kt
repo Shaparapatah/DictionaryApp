@@ -1,8 +1,11 @@
 package com.shaparapatah.dictionaryapp.application
 
 import android.app.Application
-import com.shaparapatah.dictionaryapp.application
-import com.shaparapatah.dictionaryapp.mainScreen
+import com.shaparapatah.dictionaryapp.di.application
+import com.shaparapatah.dictionaryapp.di.historyScreen
+import com.shaparapatah.dictionaryapp.di.mainScreen
+import org.koin.android.ext.koin.androidContext
+
 import org.koin.core.context.startKoin
 
 /** Инициализация Koin в приложении
@@ -14,7 +17,8 @@ class TranslatorApp : Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {
-            modules(listOf(application, mainScreen))
+            androidContext(applicationContext)
+            modules(listOf(application, mainScreen, historyScreen))
         }
     }
 }
