@@ -48,6 +48,12 @@ object Versions {
     //Coil
     const val coil = "0.11.0"
 
+    //Picasso
+    const val picasso = "2.71828"
+
+    //Glide
+    const val glide = "4.11.0"
+
     //Room
     const val roomKtx = "2.3.0"
     const val runtime = "2.3.0"
@@ -57,6 +63,8 @@ object Versions {
     const val jUnit = "4.12"
     const val runner = "1.2.0"
     const val espressoCore = "3.2.0"
+
+
 }
 
 object Design {
@@ -80,6 +88,14 @@ object Retrofit {
         "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.adapterCoroutines}"
     const val logging_interceptor =
         "com.squareup.okhttp3:logging-interceptor:${Versions.interceptor}"
+}
+
+object Picasso {
+    const val picasso = "com.squareup.picasso:${Versions.picasso}"
+}
+
+object Glide {
+    const val glide = "com.github.bumptech.glide:${Versions.glide}"
 }
 
 object Koin {

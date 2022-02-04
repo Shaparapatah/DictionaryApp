@@ -59,6 +59,12 @@ dependencies {
     //Coil
     implementation Coil.coil
 
+    //Picasso
+    implementation Picasso.picasso
+
+    //Glide
+    implementation Glide.glide
+
     // Room
     implementation Room.runtime
     kapt Room.compiler
@@ -68,5 +74,6 @@ dependencies {
     androidTestImplementation TestImpl.runner
     androidTestImplementation TestImpl.espresso
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
 }
