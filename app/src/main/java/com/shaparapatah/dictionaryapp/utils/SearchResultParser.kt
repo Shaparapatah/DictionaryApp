@@ -1,8 +1,9 @@
 package com.shaparapatah.dictionaryapp.utils
 
-import geekbrains.ru.model.data.AppState
-import geekbrains.ru.model.data.DataModel
-import geekbrains.ru.model.data.Meanings
+import com.shaparapatah.model.data.AppState
+import com.shaparapatah.model.data.DataModel
+import com.shaparapatah.model.data.Meanings
+
 
 fun parseOnlineSearchResults(data: AppState): AppState {
     return AppState.Success(mapResult(data, true))

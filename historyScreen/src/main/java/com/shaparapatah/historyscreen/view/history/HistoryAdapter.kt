@@ -1,4 +1,4 @@
-package com.shaparapatah.dictionaryapp.view.history
+package com.shaparapatah.historyscreen.view.history
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.shaparapatah.dictionaryapp.R
-import com.shaparapatah.dictionaryapp.model.data.DataModel
+import com.shaparapatah.historyscreen.R
+import com.shaparapatah.model.data.DataModel
 
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.RecyclerItemViewHolder>() {
 

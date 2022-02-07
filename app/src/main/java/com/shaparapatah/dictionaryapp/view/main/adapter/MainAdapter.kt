@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.shaparapatah.dictionaryapp.R
 import com.shaparapatah.dictionaryapp.utils.convertMeaningsToString
+import com.shaparapatah.model.data.DataModel
 import kotlinx.android.synthetic.main.activity_main_recyclerview_item.view.*
+
 // Передаём в адаптер слушатель нажатия на список
 class MainAdapter(private var onListItemClickListener: OnListItemClickListener) :
     RecyclerView.Adapter<MainAdapter.RecyclerItemViewHolder>() {
@@ -38,7 +40,8 @@ class MainAdapter(private var onListItemClickListener: OnListItemClickListener) 
         fun bind(data: DataModel) {
             if (layoutPosition != RecyclerView.NO_POSITION) {
                 itemView.header_textview_recycler_item.text = data.text
-                itemView.description_textview_recycler_item.text = convertMeaningsToString(data.meanings!!)
+                itemView.description_textview_recycler_item.text =
+                    convertMeaningsToString(data.meanings!!)
                 // Вешаем слушатель
                 itemView.setOnClickListener { openInNewWindow(data) }
             }
@@ -50,6 +53,7 @@ class MainAdapter(private var onListItemClickListener: OnListItemClickListener) 
     private fun openInNewWindow(listItemData: DataModel) {
         onListItemClickListener.onItemClick(listItemData)
     }
+
     // Определяем интерфейс обратного вызова
     interface OnListItemClickListener {
         fun onItemClick(data: DataModel)

@@ -1,9 +1,9 @@
-package com.shaparapatah.dictionaryapp.view.history
+package com.shaparapatah.historyscreen.view.history
 
 import androidx.lifecycle.LiveData
-import com.shaparapatah.dictionaryapp.model.data.AppState
-import com.shaparapatah.dictionaryapp.utils.parseLocalSearchResults
-import com.shaparapatah.dictionaryapp.viewmodel.BaseViewModel
+import com.shaparapatah.core.viewmodel.BaseViewModel
+import com.shaparapatah.historyscreen.parseLocalSearchResults
+import com.shaparapatah.model.data.AppState
 import kotlinx.coroutines.launch
 
 class HistoryViewModel(private val interactor: HistoryInteractor) :

@@ -1,9 +1,11 @@
 package com.shaparapatah.dictionaryapp.view.main
 
 import androidx.lifecycle.LiveData
+import com.shaparapatah.core.viewmodel.BaseViewModel
 import com.shaparapatah.dictionaryapp.utils.parseOnlineSearchResults
-import com.shaparapatah.dictionaryapp.viewmodel.BaseViewModel
+import com.shaparapatah.model.data.AppState
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainViewModel(private val interactor: MainInteractor) :
@@ -32,7 +34,8 @@ class MainViewModel(private val interactor: MainInteractor) :
     }
 
     override fun onCleared() {
-        _mutableLiveData.value = AppState.Success(null)//TODO Workaround. Set View to original state
+        _mutableLiveData.value =
+            AppState.Success(null)//TODO Workaround. Set View to original state
         super.onCleared()
     }
 }

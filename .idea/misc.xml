@@ -23,6 +23,8 @@
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/DictionaryApp/app/src/main/res/menu/history_menu.xml" value="0.11574074074074074" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/DictionaryApp/core/src/main/res/layout/loading_layout.xml" value="0.1" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/DictionaryApp/historyScreen/src/main/res/layout/activity_history.xml" value="0.1" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/DictionaryApp/historyScreen/src/main/res/layout/activity_history_recyclerview_item.xml" value="0.10677083333333333" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/DictionaryApp/historyScreen/src/main/res/layout/loading_layout.xml" value="0.10677083333333333" />
       </map>
     </option>
   </component>

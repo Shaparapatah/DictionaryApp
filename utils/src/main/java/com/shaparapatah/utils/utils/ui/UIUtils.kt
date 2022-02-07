@@ -1,8 +1,8 @@
-package com.shaparapatah.dictionaryapp.utils.ui
+package com.shaparapatah.utils.utils.ui
 
 import android.content.Context
 import androidx.appcompat.app.AlertDialog
-import com.shaparapatah.dictionaryapp.R
+import com.shaparapatah.utils.R
 
 fun getStubAlertDialog(context: Context): AlertDialog {
     return getAlertDialog(context, null, null)

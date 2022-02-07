@@ -1,4 +1,4 @@
-package com.shaparapatah.dictionaryapp.utils.NetworkUtils
+package com.shaparapatah.utils.utils.NetworkUtils
 
 import android.content.Context
 import android.net.ConnectivityManager

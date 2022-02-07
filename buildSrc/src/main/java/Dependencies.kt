@@ -2,9 +2,9 @@ import org.gradle.api.JavaVersion
 
 object Config {
     const val application_id = "com.shaparapatah.dictionaryapp"
-    const val compile_sdk = 31
-    const val min_sdk = 26
-    const val target_sdk = 31
+    const val compile_sdk = 30
+    const val min_sdk = 21
+    const val target_sdk = 30
     val java_version = JavaVersion.VERSION_1_8
 }
 
@@ -57,6 +57,22 @@ object Versions {
     const val jUnit = "4.12"
     const val runner = "1.2.0"
     const val espressoCore = "3.2.0"
+
+    //Picasso
+    const val picasso = "2.71828"
+
+    //Glide
+    const val glide = "4.12.0"
+    const val annotProcess = "4.12.0"
+}
+
+object Glide {
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val annotProcess = "com.github.bumptech.glide:compiler:${Versions.annotProcess}"
+}
+
+object Picasso {
+    const val picasso = "com.squareup.picasso:picasso:${Versions.picasso}"
 }
 
 object Design {

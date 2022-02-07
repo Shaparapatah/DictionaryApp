@@ -1,8 +1,10 @@
 package com.shaparapatah.dictionaryapp.view.main
 
-import com.shaparapatah.dictionaryapp.model.repository.Repository
-import com.shaparapatah.dictionaryapp.model.repository.RepositoryLocal
-import com.shaparapatah.dictionaryapp.viewmodel.Interactor
+import com.shaparapatah.core.viewmodel.Interactor
+import com.shaparapatah.model.data.AppState
+import com.shaparapatah.model.data.DataModel
+import com.shaparapatah.repository.Repository
+import com.shaparapatah.repository.RepositoryLocal
 
 class MainInteractor(
     private val repositoryRemote: Repository<List<DataModel>>,

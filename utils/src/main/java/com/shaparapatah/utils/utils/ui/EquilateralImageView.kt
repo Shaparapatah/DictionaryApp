@@ -1,4 +1,4 @@
-package com.shaparapatah.dictionaryapp.utils.ui
+package com.shaparapatah.utils.utils.ui
 
 import android.content.Context
 import android.util.AttributeSet

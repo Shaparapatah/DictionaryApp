@@ -31,12 +31,17 @@ android {
         sourceCompatibility Config.java_version
         targetCompatibility Config.java_version
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
+
 }
 
 dependencies {
+
+    //Modules
+    implementation project(Modules.core)
+    implementation project(Modules.model)
+    implementation project(Modules.repository)
+    implementation project(Modules.utils)
+    implementation project(Modules.historyScreen)
 
     // AndroidX
     implementation Design.appcompat
@@ -64,16 +69,25 @@ dependencies {
     kapt Room.compiler
     implementation Room.room_ktx
 
+
     //Retrofit
     implementation Retrofit.retrofit
     implementation Retrofit.converter_gson
     implementation Retrofit.adapter_coroutines
     implementation Retrofit.logging_interceptor
 
+    //Picasso
+    implementation Picasso.picasso
+
+    //Glide
+    implementation Glide.glide
+    annotationProcessor Glide.annotProcess
+
     // Test
     testImplementation TestImpl.junit
     androidTestImplementation TestImpl.runner
     androidTestImplementation TestImpl.espresso
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
 
 }

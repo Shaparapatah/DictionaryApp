@@ -1,8 +1,8 @@
-package com.shaparapatah.dictionaryapp.viewmodel
+package com.shaparapatah.core.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.shaparapatah.dictionaryapp.model.data.AppState
+import com.shaparapatah.model.data.AppState
 import kotlinx.coroutines.*
 
 abstract class BaseViewModel<T : AppState>(

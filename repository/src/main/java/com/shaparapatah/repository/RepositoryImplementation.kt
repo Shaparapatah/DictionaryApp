@@ -1,6 +1,6 @@
 package com.shaparapatah.repository
 
-import com.shaparapatah.dictionaryapp.model.data.datasource.DataSource
+import com.shaparapatah.model.data.DataModel
 
 class RepositoryImplementation(private val dataSource: DataSource<List<DataModel>>) :
     Repository<List<DataModel>> {

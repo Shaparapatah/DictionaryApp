@@ -1,4 +1,4 @@
-package com.shaparapatah.dictionaryapp.room
+package com.shaparapatah.repository.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

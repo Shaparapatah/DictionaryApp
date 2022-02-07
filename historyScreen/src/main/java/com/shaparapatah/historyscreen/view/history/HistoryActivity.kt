@@ -1,13 +1,12 @@
-package com.shaparapatah.dictionaryapp.view.history
+package com.shaparapatah.historyscreen.view.history
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import com.shaparapatah.dictionaryapp.databinding.ActivityHistoryBinding
-import com.shaparapatah.dictionaryapp.model.data.AppState
-import com.shaparapatah.dictionaryapp.model.data.DataModel
-import com.shaparapatah.dictionaryapp.view.base.BaseActivity
-import org.koin.androidx.viewmodel.ext.android.viewModel
-
+import com.shaparapatah.core.BaseActivity
+import com.shaparapatah.historyscreen.databinding.ActivityHistoryBinding
+import com.shaparapatah.model.data.AppState
+import com.shaparapatah.model.data.DataModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class HistoryActivity : BaseActivity<AppState, HistoryInteractor>() {
 
@@ -39,7 +38,7 @@ class HistoryActivity : BaseActivity<AppState, HistoryInteractor>() {
         }
         val viewModel: HistoryViewModel by viewModel()
         model = viewModel
-        model.subscribe().observe(this@HistoryActivity, Observer<AppState> { renderData(it) })
+        model.subscribe().observe(this@HistoryActivity, { renderData(it) })
     }
 
     private fun initViews() {

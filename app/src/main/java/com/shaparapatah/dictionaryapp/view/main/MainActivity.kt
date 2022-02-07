@@ -6,15 +6,18 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.lifecycle.Observer
+import com.shaparapatah.core.BaseActivity
 import com.shaparapatah.dictionaryapp.R
 import com.shaparapatah.dictionaryapp.databinding.ActivityMainBinding
-import com.shaparapatah.dictionaryapp.utils.NetworkUtils.isOnline
 import com.shaparapatah.dictionaryapp.utils.convertMeaningsToString
-import com.shaparapatah.dictionaryapp.view.base.BaseActivity
 import com.shaparapatah.dictionaryapp.view.descriptionscreen.DescriptionActivity
-import com.shaparapatah.dictionaryapp.view.history.HistoryActivity
 import com.shaparapatah.dictionaryapp.view.main.adapter.MainAdapter
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.shaparapatah.historyscreen.view.history.HistoryActivity
+import com.shaparapatah.model.data.AppState
+import com.shaparapatah.model.data.DataModel
+import com.shaparapatah.utils.utils.NetworkUtils.isOnline
+import org.koin.android.viewmodel.ext.android.viewModel
+
 
 private const val BOTTOM_SHEET_FRAGMENT_DIALOG_TAG = "74a54328-5d62-46bf-ab6b-cbf5fgt0-092395"
 
@@ -37,7 +40,7 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
                         this@MainActivity,
                         data.text!!,
                         convertMeaningsToString(data.meanings!!),
-                        data.meanings[0].imageUrl
+                        data.meanings!![0].imageUrl
                     )
                 )
             }

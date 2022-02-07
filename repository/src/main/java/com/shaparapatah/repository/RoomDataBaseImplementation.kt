@@ -1,8 +1,8 @@
 package com.shaparapatah.repository
 
-import com.shaparapatah.dictionaryapp.room.HistoryDao
-import com.shaparapatah.dictionaryapp.utils.convertDataModelSuccessToEntity
-import com.shaparapatah.dictionaryapp.utils.mapHistoryEntityToSearchResult
+import com.shaparapatah.model.data.AppState
+import com.shaparapatah.model.data.DataModel
+import com.shaparapatah.repository.room.HistoryDao
 
 class RoomDataBaseImplementation(private val historyDao: HistoryDao) :
     DataSourceLocal<List<DataModel>> {
@@ -17,3 +17,4 @@ class RoomDataBaseImplementation(private val historyDao: HistoryDao) :
         }
     }
 }
+

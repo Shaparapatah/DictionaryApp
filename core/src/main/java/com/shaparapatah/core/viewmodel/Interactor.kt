@@ -1,4 +1,4 @@
-package com.shaparapatah.dictionaryapp.viewmodel
+package com.shaparapatah.core.viewmodel
 
 /** Интерфейс, который скрывает работу Интерактора */
 

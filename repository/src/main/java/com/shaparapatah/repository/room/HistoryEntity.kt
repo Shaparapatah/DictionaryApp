@@ -1,4 +1,4 @@
-package com.shaparapatah.dictionaryapp.room
+package com.shaparapatah.repository.room
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
