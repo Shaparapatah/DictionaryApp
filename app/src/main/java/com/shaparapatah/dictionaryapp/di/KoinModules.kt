@@ -1,7 +1,6 @@
 package com.shaparapatah.dictionaryapp.di
 
 import androidx.room.Room
-import com.shaparapatah.dictionaryapp.model.data.DataModel
 import com.shaparapatah.dictionaryapp.model.data.datasource.RetrofitImplementation
 import com.shaparapatah.dictionaryapp.model.data.datasource.RoomDataBaseImplementation
 import com.shaparapatah.dictionaryapp.model.repository.Repository

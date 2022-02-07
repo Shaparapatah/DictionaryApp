@@ -8,8 +8,6 @@ import android.view.View
 import androidx.lifecycle.Observer
 import com.shaparapatah.dictionaryapp.R
 import com.shaparapatah.dictionaryapp.databinding.ActivityMainBinding
-import com.shaparapatah.dictionaryapp.model.data.AppState
-import com.shaparapatah.dictionaryapp.model.data.DataModel
 import com.shaparapatah.dictionaryapp.utils.NetworkUtils.isOnline
 import com.shaparapatah.dictionaryapp.utils.convertMeaningsToString
 import com.shaparapatah.dictionaryapp.view.base.BaseActivity

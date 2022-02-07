@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.shaparapatah.dictionaryapp.R
-import com.shaparapatah.dictionaryapp.model.data.DataModel
 import com.shaparapatah.dictionaryapp.utils.convertMeaningsToString
 import kotlinx.android.synthetic.main.activity_main_recyclerview_item.view.*
 // Передаём в адаптер слушатель нажатия на список

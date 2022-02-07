@@ -1,7 +1,5 @@
 package com.shaparapatah.dictionaryapp.view.main
 
-import com.shaparapatah.dictionaryapp.model.data.AppState
-import com.shaparapatah.dictionaryapp.model.data.DataModel
 import com.shaparapatah.dictionaryapp.model.repository.Repository
 import com.shaparapatah.dictionaryapp.model.repository.RepositoryLocal
 import com.shaparapatah.dictionaryapp.viewmodel.Interactor

@@ -1,11 +1,9 @@
 package com.shaparapatah.dictionaryapp.view.main
 
 import androidx.lifecycle.LiveData
-import com.shaparapatah.dictionaryapp.model.data.AppState
 import com.shaparapatah.dictionaryapp.utils.parseOnlineSearchResults
 import com.shaparapatah.dictionaryapp.viewmodel.BaseViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainViewModel(private val interactor: MainInteractor) :

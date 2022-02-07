@@ -21,6 +21,8 @@
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/DictionaryApp/app/src/main/res/layout/search_dialog_fragment.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/DictionaryApp/app/src/main/res/layout/search_iteam_fragment.xml" value="0.16203703703703703" />
         <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/DictionaryApp/app/src/main/res/menu/history_menu.xml" value="0.11574074074074074" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/DictionaryApp/core/src/main/res/layout/loading_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Shaparapatah/AndroidStudioProjects/DictionaryApp/historyScreen/src/main/res/layout/activity_history.xml" value="0.1" />
       </map>
     </option>
   </component>
