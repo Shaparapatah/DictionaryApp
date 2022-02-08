@@ -1,7 +1,6 @@
 package com.shaparapatah.historyscreen.view.history
 
 import android.os.Bundle
-import androidx.lifecycle.Observer
 import com.shaparapatah.core.BaseActivity
 import com.shaparapatah.historyscreen.databinding.ActivityHistoryBinding
 import com.shaparapatah.model.data.AppState

@@ -17,9 +17,7 @@ val application = module {
     single { get<HistoryDataBase>().historyDao() }
     single<Repository<List<DataModel>>> { RepositoryImplementation(RetrofitImplementation()) }
     single<RepositoryLocal<List<DataModel>>> {
-        RepositoryImplementationLocal(
-            RoomDataBaseImplementation(get())
-        )
+        RepositoryImplementationLocal(RoomDataBaseImplementation(get()))
     }
 }
 

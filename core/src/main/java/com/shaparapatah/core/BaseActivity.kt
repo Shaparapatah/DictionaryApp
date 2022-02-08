@@ -7,10 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.shaparapatah.core.databinding.LoadingLayoutBinding
 import com.shaparapatah.core.viewmodel.BaseViewModel
 import com.shaparapatah.core.viewmodel.Interactor
-import com.shaparapatah.utils.utils.ui.AlertDialogFragment
 import com.shaparapatah.model.data.AppState
 import com.shaparapatah.model.data.DataModel
 import com.shaparapatah.utils.utils.NetworkUtils.isOnline
+import com.shaparapatah.utils.utils.ui.AlertDialogFragment
+
 
 private const val DIALOG_FRAGMENT_TAG = "74a54328-5d62-46bf-ab6b-cbf5d8c79522"
 

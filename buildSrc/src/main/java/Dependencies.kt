@@ -57,22 +57,6 @@ object Versions {
     const val jUnit = "4.12"
     const val runner = "1.2.0"
     const val espressoCore = "3.2.0"
-
-    //Picasso
-    const val picasso = "2.71828"
-
-    //Glide
-    const val glide = "4.12.0"
-    const val annotProcess = "4.12.0"
-}
-
-object Glide {
-    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
-    const val annotProcess = "com.github.bumptech.glide:compiler:${Versions.annotProcess}"
-}
-
-object Picasso {
-    const val picasso = "com.squareup.picasso:picasso:${Versions.picasso}"
 }
 
 object Design {

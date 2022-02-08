@@ -3,11 +3,11 @@ package com.shaparapatah.historyscreen.view.history
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.shaparapatah.historyscreen.R
 import com.shaparapatah.model.data.DataModel
+import kotlinx.android.synthetic.main.activity_history_recyclerview_item.view.*
 
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.RecyclerItemViewHolder>() {
 
@@ -37,8 +37,7 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.RecyclerItemViewHolde
 
         fun bind(data: DataModel) {
             if (layoutPosition != RecyclerView.NO_POSITION) {
-                itemView.findViewById<TextView>(R.id.header_history_textview_recycler_item).text =
-                    data.text
+                itemView.header_history_textview_recycler_item.text = data.text
                 itemView.setOnClickListener {
                     Toast.makeText(itemView.context, "on click: ${data.text}", Toast.LENGTH_SHORT)
                         .show()

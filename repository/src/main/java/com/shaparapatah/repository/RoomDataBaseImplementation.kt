@@ -17,4 +17,3 @@ class RoomDataBaseImplementation(private val historyDao: HistoryDao) :
         }
     }
 }
-

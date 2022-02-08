@@ -23,9 +23,6 @@ dependencies {
     kapt Room.compiler
     implementation Room.room_ktx
 
-
-
-
     //Test
     testImplementation TestImpl.junit
     androidTestImplementation TestImpl.runner
