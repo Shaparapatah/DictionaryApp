@@ -2,9 +2,9 @@ import org.gradle.api.JavaVersion
 
 object Config {
     const val application_id = "com.shaparapatah.dictionaryapp"
-    const val compile_sdk = 30
-    const val min_sdk = 21
-    const val target_sdk = 30
+    const val compile_sdk = 31
+    const val min_sdk = 26
+    const val target_sdk = 31
     val java_version = JavaVersion.VERSION_1_8
 }
 
@@ -32,8 +32,10 @@ object Versions {
     //Kotlin
     const val core = "1.6.0"
     const val stdlib = "1.5.21"
-    const val coroutinesCore = "1.4.3"
+    const val coroutinesCore = "1.5.0"
     const val coroutinesAndroid = "1.4.3"
+    const val coroutinesReactor = "1.5.0"
+    const val coroutinesReactive = "1.5.0"
 
     //Retrofit
     const val retrofit = "2.6.0"
@@ -49,9 +51,9 @@ object Versions {
     const val coil = "0.11.0"
 
     //Room
-    const val roomKtx = "2.3.0"
-    const val runtime = "2.3.0"
-    const val roomCompiler = "2.3.0"
+    const val roomKtx = "2.4.1"
+    const val runtime = "2.4.1"
+    const val roomCompiler = "2.4.1"
 
     //Test
     const val jUnit = "4.12"
@@ -71,6 +73,10 @@ object Kotlin {
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesCore}"
     const val coroutines_android =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesAndroid}"
+    const val coroutines_reactor =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-reactor:${Versions.coroutinesReactor}"
+    const val coroutines_reactive =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:${Versions.coroutinesReactive}"
 }
 
 object Retrofit {

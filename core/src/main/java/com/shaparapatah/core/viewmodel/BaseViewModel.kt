@@ -1,5 +1,6 @@
 package com.shaparapatah.core.viewmodel
 
+import androidx.annotation.OptIn
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.shaparapatah.model.data.AppState
@@ -8,6 +9,7 @@ import kotlinx.coroutines.*
 abstract class BaseViewModel<T : AppState>(
     protected open val _mutableLiveData: MutableLiveData<T> = MutableLiveData()
 ) : ViewModel() {
+
 
     protected val viewModelCoroutineScope = CoroutineScope(
         Dispatchers.Main
