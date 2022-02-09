@@ -2,13 +2,17 @@ package com.shaparapatah.dictionaryapp.di
 
 
 import androidx.room.Room
+import com.shaparapatah.dictionaryapp.view.main.MainActivity
 import com.shaparapatah.dictionaryapp.view.main.MainInteractor
 import com.shaparapatah.dictionaryapp.view.main.MainViewModel
+import com.shaparapatah.historyscreen.view.history.HistoryActivity
 import com.shaparapatah.historyscreen.view.history.HistoryInteractor
 import com.shaparapatah.historyscreen.view.history.HistoryViewModel
 import com.shaparapatah.model.data.DataModel
 import com.shaparapatah.repository.*
 import com.shaparapatah.repository.room.HistoryDataBase
+import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 
@@ -22,11 +26,15 @@ val application = module {
 }
 
 val mainScreen = module {
-    factory { MainViewModel(get()) }
-    factory { MainInteractor(get(), get()) }
+    scope(named<MainActivity>()) {
+        scoped { MainInteractor(get(), get()) }
+        viewModel { MainViewModel(get()) }
+    }
 }
 
 val historyScreen = module {
-    factory { HistoryViewModel(get()) }
-    factory { HistoryInteractor(get(), get()) }
+    scope(named<HistoryActivity>()) {
+        scoped { HistoryInteractor(get(), get()) }
+        viewModel { HistoryViewModel(get()) }
+    }
 }
