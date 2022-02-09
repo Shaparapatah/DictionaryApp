@@ -69,7 +69,6 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
         initViews()
     }
 
-
     override fun setDataToAdapter(data: List<DataModel>) {
         adapter.setData(data)
     }
