@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.shaparapatah.core.BaseActivity
 import com.shaparapatah.dictionaryapp.R
 import com.shaparapatah.dictionaryapp.databinding.ActivityMainBinding
@@ -15,12 +17,16 @@ import com.shaparapatah.historyscreen.view.history.HistoryActivity
 import com.shaparapatah.model.data.AppState
 import com.shaparapatah.model.data.DataModel
 import com.shaparapatah.utils.utils.NetworkUtils.isOnline
+import com.shaparapatah.utils.utils.viewById
 import org.koin.android.scope.currentScope
 
 
 private const val BOTTOM_SHEET_FRAGMENT_DIALOG_TAG = "74a54328-5d62-46bf-ab6b-cbf5fgt0-092395"
 
 class MainActivity : BaseActivity<AppState, MainInteractor>() {
+
+    private val mainActivityRecyclerView by viewById<RecyclerView>(R.id.main_activity_recyclerview)
+    private val searchFAB by viewById<FloatingActionButton>(R.id.search_fab)
 
     private lateinit var binding: ActivityMainBinding
     override lateinit var model: MainViewModel
@@ -95,7 +101,10 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
     }
 
     private fun initViews() {
-        binding.searchFab.setOnClickListener(fabClickListener)
-        binding.mainActivityRecyclerview.adapter = adapter
+//        binding.searchFab.setOnClickListener(fabClickListener)
+//        binding.mainActivityRecyclerview.adapter = adapter
+
+        searchFAB.setOnClickListener(fabClickListener)
+        mainActivityRecyclerView.adapter = adapter
     }
 }
