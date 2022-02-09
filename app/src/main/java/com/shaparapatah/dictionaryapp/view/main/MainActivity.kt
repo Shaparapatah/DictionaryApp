@@ -16,7 +16,6 @@ import com.shaparapatah.dictionaryapp.view.main.adapter.MainAdapter
 import com.shaparapatah.historyscreen.view.history.HistoryActivity
 import com.shaparapatah.model.data.AppState
 import com.shaparapatah.model.data.DataModel
-import com.shaparapatah.utils.utils.NetworkUtils.isOnline
 import com.shaparapatah.utils.utils.viewById
 import org.koin.android.scope.currentScope
 
@@ -53,7 +52,6 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
     private val onSearchClickListener: SearchDialogFragment.OnSearchClickListener =
         object : SearchDialogFragment.OnSearchClickListener {
             override fun onClick(searchWord: String) {
-                isNetworkAvailable = isOnline(applicationContext)
                 if (isNetworkAvailable) {
                     model.getData(searchWord, isNetworkAvailable)
                 } else {
@@ -70,6 +68,7 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
         iniViewModel()
         initViews()
     }
+
 
     override fun setDataToAdapter(data: List<DataModel>) {
         adapter.setData(data)

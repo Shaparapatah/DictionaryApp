@@ -3,13 +3,14 @@ package com.shaparapatah.core
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.shaparapatah.core.databinding.LoadingLayoutBinding
 import com.shaparapatah.core.viewmodel.BaseViewModel
 import com.shaparapatah.core.viewmodel.Interactor
 import com.shaparapatah.model.data.AppState
 import com.shaparapatah.model.data.DataModel
-import com.shaparapatah.utils.utils.NetworkUtils.isOnline
+import com.shaparapatah.utils.utils.NetworkUtils.OnlineLiveData
 import com.shaparapatah.utils.utils.ui.AlertDialogFragment
 
 
@@ -19,18 +20,31 @@ abstract class BaseActivity<T : AppState, I : Interactor<T>> : AppCompatActivity
 
     private lateinit var binding: LoadingLayoutBinding
     abstract val model: BaseViewModel<T>
-    protected var isNetworkAvailable: Boolean = false
+    protected var isNetworkAvailable: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
-        isNetworkAvailable = isOnline(applicationContext)
+        subscriberToNetworkChange()
+    }
+
+    private fun subscriberToNetworkChange() {
+        OnlineLiveData(this).observe(
+            this@BaseActivity
+        ) {
+            isNetworkAvailable = it
+            if (!isNetworkAvailable) {
+                Toast.makeText(
+                    this@BaseActivity,
+                    R.string.dialog_message_device_is_offline,
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
     }
 
     override fun onResume() {
         super.onResume()
         binding = LoadingLayoutBinding.inflate(layoutInflater)
-
-        isNetworkAvailable = isOnline(applicationContext)
         if (!isNetworkAvailable && isDialogNull()) {
             showNoInternetConnectionDialog()
         }
