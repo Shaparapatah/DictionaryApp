@@ -6,9 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.shaparapatah.dictionaryapp.R
-import com.shaparapatah.dictionaryapp.utils.convertMeaningsToString
-import com.shaparapatah.model.data.DataModel
-import kotlinx.android.synthetic.main.activity_main_recyclerview_item.view.*
+import com.shaparapatah.dictionaryapp.utils.convertMeaningsToSingleString
+import com.shaparapatah.model.data.userdata.DataModel
 
 class MainAdapter(private var onListItemClickListener: OnListItemClickListener) :
     RecyclerView.Adapter<MainAdapter.RecyclerItemViewHolder>() {
@@ -41,7 +40,7 @@ class MainAdapter(private var onListItemClickListener: OnListItemClickListener) 
             if (layoutPosition != RecyclerView.NO_POSITION) {
                 itemView.findViewById<TextView>(R.id.header_textview_recycler_item).text = data.text
                 itemView.findViewById<TextView>(R.id.description_textview_recycler_item).text =
-                    convertMeaningsToString(data.meanings!!)
+                    convertMeaningsToSingleString(data.meanings)
                 itemView.setOnClickListener { openInNewWindow(data) }
             }
         }

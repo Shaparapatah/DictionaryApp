@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.shaparapatah.core.BaseActivity
 import com.shaparapatah.historyscreen.databinding.ActivityHistoryBinding
 import com.shaparapatah.model.data.AppState
-import com.shaparapatah.model.data.DataModel
+import com.shaparapatah.model.data.userdata.DataModel
 import org.koin.android.scope.currentScope
 
 class HistoryActivity : BaseActivity<AppState, HistoryInteractor>() {

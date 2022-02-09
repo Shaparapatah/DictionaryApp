@@ -8,7 +8,7 @@ import com.shaparapatah.dictionaryapp.view.main.MainViewModel
 import com.shaparapatah.historyscreen.view.history.HistoryActivity
 import com.shaparapatah.historyscreen.view.history.HistoryInteractor
 import com.shaparapatah.historyscreen.view.history.HistoryViewModel
-import com.shaparapatah.model.data.DataModel
+import com.shaparapatah.model.data.dto.SearchResultDto
 import com.shaparapatah.repository.*
 import com.shaparapatah.repository.room.HistoryDataBase
 import org.koin.android.viewmodel.dsl.viewModel
@@ -19,8 +19,8 @@ import org.koin.dsl.module
 val application = module {
     single { Room.databaseBuilder(get(), HistoryDataBase::class.java, "HistoryDB").build() }
     single { get<HistoryDataBase>().historyDao() }
-    single<Repository<List<DataModel>>> { RepositoryImplementation(RetrofitImplementation()) }
-    single<RepositoryLocal<List<DataModel>>> {
+    single<Repository<List<SearchResultDto>>> { RepositoryImplementation(RetrofitImplementation()) }
+    single<RepositoryLocal<List<SearchResultDto>>> {
         RepositoryImplementationLocal(RoomDataBaseImplementation(get()))
     }
 }

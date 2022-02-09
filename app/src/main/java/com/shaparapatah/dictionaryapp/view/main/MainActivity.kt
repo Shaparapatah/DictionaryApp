@@ -10,12 +10,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.shaparapatah.core.BaseActivity
 import com.shaparapatah.dictionaryapp.R
 import com.shaparapatah.dictionaryapp.databinding.ActivityMainBinding
-import com.shaparapatah.dictionaryapp.utils.convertMeaningsToString
+import com.shaparapatah.dictionaryapp.utils.convertMeaningsToSingleString
 import com.shaparapatah.dictionaryapp.view.descriptionscreen.DescriptionActivity
 import com.shaparapatah.dictionaryapp.view.main.adapter.MainAdapter
 import com.shaparapatah.historyscreen.view.history.HistoryActivity
 import com.shaparapatah.model.data.AppState
-import com.shaparapatah.model.data.DataModel
+import com.shaparapatah.model.data.userdata.DataModel
 import com.shaparapatah.utils.utils.viewById
 import org.koin.android.scope.currentScope
 
@@ -43,8 +43,8 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
                     DescriptionActivity.getIntent(
                         this@MainActivity,
                         data.text!!,
-                        convertMeaningsToString(data.meanings!!),
-                        data.meanings!![0].imageUrl
+                        convertMeaningsToSingleString(data.meanings),
+                        data.meanings[0].imageUrl
                     )
                 )
             }

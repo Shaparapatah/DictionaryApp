@@ -1,14 +1,14 @@
 package com.shaparapatah.repository
 
 import com.shaparapatah.model.data.AppState
-import com.shaparapatah.model.data.DataModel
+import com.shaparapatah.model.data.dto.SearchResultDto
 import com.shaparapatah.repository.room.HistoryEntity
 
-fun mapHistoryEntityToSearchResult(list: List<HistoryEntity>): List<DataModel> {
-    val searchResult = ArrayList<DataModel>()
+fun mapHistoryEntityToSearchResult(list: List<HistoryEntity>): List<SearchResultDto> {
+    val searchResult = ArrayList<SearchResultDto>()
     if (!list.isNullOrEmpty()) {
         for (entity in list) {
-            searchResult.add(DataModel(entity.word, null))
+            searchResult.add(SearchResultDto(entity.word, null))
         }
     }
     return searchResult
