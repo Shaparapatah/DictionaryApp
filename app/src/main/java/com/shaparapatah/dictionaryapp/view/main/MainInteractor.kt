@@ -1,21 +1,25 @@
 package com.shaparapatah.dictionaryapp.view.main
 
-import com.shaparapatah.dictionaryapp.model.data.AppState
-import com.shaparapatah.dictionaryapp.model.data.DataModel
-import com.shaparapatah.dictionaryapp.model.repository.Repository
-import com.shaparapatah.dictionaryapp.presenter.Interactor
-import io.reactivex.Observable
+import com.shaparapatah.core.viewmodel.Interactor
+import com.shaparapatah.dictionaryapp.utils.mapSearchResultToResult
+import com.shaparapatah.model.data.AppState
+import com.shaparapatah.model.data.dto.SearchResultDto
+import com.shaparapatah.repository.Repository
+import com.shaparapatah.repository.RepositoryLocal
 
 class MainInteractor(
-    private val remoteRepository: Repository<List<DataModel>>,
-    private val localRepository: Repository<List<DataModel>>
+    private val repositoryRemote: Repository<List<SearchResultDto>>,
+    private val repositoryLocal: RepositoryLocal<List<SearchResultDto>>
 ) : Interactor<AppState> {
 
-    override fun getData(word: String, fromRemoteSource: Boolean): Observable<AppState> {
-        return if (fromRemoteSource) {
-            remoteRepository.getData(word).map { AppState.Success(it) }
+    override suspend fun getData(word: String, fromRemoteSource: Boolean): AppState {
+        val appState: AppState
+        if (fromRemoteSource) {
+            appState = AppState.Success(mapSearchResultToResult(repositoryRemote.getData(word)))
+            repositoryLocal.saveToDB(appState)
         } else {
-            localRepository.getData(word).map { AppState.Success(it) }
+            appState = AppState.Success(mapSearchResultToResult(repositoryLocal.getData(word)))
         }
+        return appState
     }
 }

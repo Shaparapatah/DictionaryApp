@@ -6,5 +6,10 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "DictionaryApp"
+
 include ':app'
+include ':core'
+include ':historyScreen'
+include ':model'
+include ':repository'
+include ':utils'
